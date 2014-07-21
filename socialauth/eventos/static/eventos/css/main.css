@@ -1,0 +1,38 @@
+@media {
+    .container {
+        max-width: 980px;
+    }
+}
+
+#nav {
+   margin-bottom: 2px; 
+}
+
+body hr {
+    border-top: 1px solid #ACA0A0;
+}
+
+.bordesContenedores
+{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.fondoContenedores
+{
+    background-color: rgb(245, 244, 244);
+}
+
+.contenido
+{
+    min-height: 375px;
+    border: 1px solid #000000;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.contenido h1,h3,h4
+{
+	padding: 0px;
+	margin: 0px;
+}

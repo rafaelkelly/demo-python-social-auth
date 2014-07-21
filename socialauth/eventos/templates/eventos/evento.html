@@ -1,0 +1,29 @@
+{% extends 'eventos/base.html' %}
+
+{% block content_title %}{{ evento.nombre }}{% endblock %}
+
+{% block content %}
+
+<ul>
+    <li>Lugar: {{ evento.lugar }}</li>
+    <li>Fecha: {{ evento.fecha }}</li>
+    <li>Número máximo de asistencia: {{ evento.max_asistentes }}</li>
+    <li>Horas aproximadas de duracion: {{ evento.duracion_horas }}</li>
+    <li>Asistentes:
+        <ul>
+        {% for asistente in evento.asistentes.all %}
+            <li>{{ asistente.first_name }} {{ asistente.last_name }}</li>
+        {% endfor %}
+        </ul>
+    </li>
+    <br>
+    {% if disponible %}
+        <a href="{% url 'eventos:registrar' evento.pk %}" class="btn btn-primary">
+            Registrar Asistencia
+        </a>       
+    {% endif %}
+</ul>
+
+
+
+{% endblock %}

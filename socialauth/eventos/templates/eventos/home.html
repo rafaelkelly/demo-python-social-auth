@@ -1,0 +1,13 @@
+{% extends 'eventos/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated and not user.is_superuser %}
+    <h3>Bienvenid@ {{ user.first_name }}!</h3> 
+{% else %}
+    <a href="{% url 'social:begin' 'facebook' %}?next={% url 'eventos:home' %}" class="btn btn-primary">
+        Identificarse con Facebook
+    </a>
+{% endif %}
+
+{% endblock %}

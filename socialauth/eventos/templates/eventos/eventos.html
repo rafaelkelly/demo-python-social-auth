@@ -1,0 +1,17 @@
+{% extends 'eventos/base.html' %}
+
+{% block content_title %}Eventos Disponibles{% endblock %}
+
+{% block content %}
+
+{% if eventos %}
+    <ul>
+    {% for evento in eventos %}
+        <li><a href="{% url 'eventos:evento' evento.pk %}">{{ evento }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No existen eventos almacenados.</p>
+{% endif %}
+
+{% endblock %}
